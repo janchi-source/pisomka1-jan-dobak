@@ -7,10 +7,6 @@ import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
-// import SearchIcon from '@mui/icons-material/Search';
-import AddBoxIcon from '@mui/icons-material/AddBox';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { usePathname, useRouter } from 'next/navigation';
 // import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 // import Login from '@/app/auth/prihlasenie/page';
@@ -27,17 +23,11 @@ const NavBar = () => {
       case '/':
         setValue(0);
         break;
-      case '/vyhladavanie':
+      case '/notifikacie':
         setValue(1);
         break;
-      case '/pridat':
-        setValue(2);
-        break;
-      case '/notifikacie':
-        setValue(3);
-        break;
       case '/profile':
-        setValue(4);
+        setValue(2);
         break;
       default:
         setValue(0);
@@ -52,16 +42,10 @@ const NavBar = () => {
         router.push('/');
         break;
       case 1:
-        router.push('/prispevky');
+        router.push('/auth/signup');
         break;
       case 2:
-        router.push('/profil');
-        break;
-      case 3:
-        router.push('/auth/registracia');
-        break;
-      case 4:
-        router.push('/auth/prihlasenie');
+        router.push('/auth/signin');
         break;
       default:
         break;
@@ -76,8 +60,6 @@ const NavBar = () => {
         onChange={handleChange}
       >
         <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-        <BottomNavigationAction label="Prispevky" icon={<AddBoxIcon />} />
-        <BottomNavigationAction label="Profili" icon={<AccountCircleIcon/>} />
         <BottomNavigationAction label="Sign Up" icon={<LoginIcon />} />
         <BottomNavigationAction label="Sign In" icon={<LoginIcon />} />
       </BottomNavigation>
