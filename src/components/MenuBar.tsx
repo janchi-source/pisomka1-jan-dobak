@@ -13,7 +13,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import LoginIcon from '@mui/icons-material/Login';
 // import LogoutIcon from '@mui/icons-material/Logout';
 
-const NavBar = () => {
+const MenuBar = () => {
   const [value, setValue] = React.useState(0);
   const pathname = usePathname();
   const router = useRouter();
@@ -23,10 +23,10 @@ const NavBar = () => {
       case '/':
         setValue(0);
         break;
-      case '/notifikacie':
+      case '/auth/signup':
         setValue(1);
         break;
-      case '/profile':
+      case '/auth/signin':
         setValue(2);
         break;
       default:
@@ -67,4 +67,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default MenuBar;

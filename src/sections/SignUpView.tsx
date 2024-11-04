@@ -30,10 +30,6 @@ export default function SignUpView() {
         Registrácia
       </Typography>
 
-      {/* Sign-in link */}
-      <Typography variant="body1" sx={{ mb: 6 }}>
-        Už máte účet? <a href="/auth/prihlasenie">Prihláste sa</a>
-      </Typography>
 
       {/* Google Sign Up */}
       <Button
